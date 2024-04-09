@@ -1,0 +1,26 @@
+{
+  "name": "hashmap",
+  "version": "1.0.0",
+  "description": "Project that creates a HasmMap with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosfrontend/HashMap.git"
+  },
+  "author": "carlosfrontend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlosfrontend/HashMap/issues"
+  },
+  "homepage": "https://github.com/carlosfrontend/HashMap#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "nodemon": "^3.1.0"
+  }
+}
