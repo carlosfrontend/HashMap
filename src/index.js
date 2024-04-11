@@ -1,13 +1,19 @@
 import HashMap from './HashMap.js';
 
-HashMap().set('Carlos', 'Godot');
-HashMap().set('Sarah', 'Lee');
-HashMap().set('Michael', 'Async');
-HashMap().set('Lisa', 'Await');
-HashMap().set('Ane', 'Chrome');
-HashMap().set('enA', 'Firefox');
+HashMap().set('Girth', 'Wiedenbauer');
+HashMap().set('Jonquil', 'Von Haggerston');
+HashMap().set('Ben', 'Evolent');
+HashMap().set('Phillip', 'Anthropy');
+HashMap().set('Miles', 'Tone');
+HashMap().set('Alan', 'Fresco');
+HashMap().set('Hillary','Ousse');
 
-console.log(HashMap().get('enA'));
-// console.log(HashMap().has("Carlos"));
-// console.log(HashMap().get("Gerar"));
+console.log(HashMap().get('Alan'));
+
+console.log(HashMap().has('Philli'));
+console.log(HashMap().has('Alan'));
+console.log(HashMap().has('Jonq'));
+console.log(HashMap().has('Miles'));
+console.log(HashMap().has(''));
+
 console.log(HashMap().buckets);
