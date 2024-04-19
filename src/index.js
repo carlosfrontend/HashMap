@@ -1,4 +1,5 @@
 import HashMap from './HashMap.js';
+import HashSet from './HashSet.js';
 
 HashMap().set('Girth', 'Wiedenbauer');
 HashMap().set('Jonquil', 'Von Haggerston');
@@ -56,3 +57,52 @@ console.log('\n===== BUCKETS AFTER CLEAR =====');
 console.log(HashMap().buckets);
 console.log('\n===== LENGTH =====');
 console.log(HashMap().length());
+
+
+console.log('\n===== EXTRA CREDIT HASHSET =====');
+HashSet().set('Paris');
+HashSet().set('London');
+HashSet().set('Berlín');
+HashSet().set('Madeira');
+HashSet().set('Viena');
+HashSet().set('Valencia');
+HashSet().set('New York');
+HashSet().set('Canada');
+HashSet().set('Porto');
+HashSet().set('Lima');
+HashSet().set('Mexico DF');
+HashSet().set('Amsterdam');
+HashSet().set('Frankfurt');
+HashSet().set('Lisbon');
+HashSet().set('Rome');
+HashSet().set('Athenas');
+HashSet().set('The Cairo City');
+HashSet().set('Manchester');
+
+console.log('\n===== BUCKETS HASHSET =====');
+console.log(HashSet().buckets);
+console.log('\n===== LENGTH HASHSET =====');
+console.log(HashSet().length());
+console.log('\n===== HAS KEY? HASHSET =====');
+console.log(`\nHas London? ${HashSet().has('London')}`);
+console.log(`\nHas Lisbon? ${HashSet().has('Lisbon')}`);
+console.log(`\nHas Rom? ${HashSet().has('Rom')}`);
+console.log(`\nHas a void string? ${HashSet().has('')}`);
+
+console.log('\n===== REMOVED HASHSET =====');
+console.log(`\nIs removed Lisbon? ${HashSet().remove('Lisbon')}`);
+console.log(`\nIs removed Porto? ${HashSet().remove('Porto')}`);
+console.log(`\nIs removed New? ${HashSet().remove('New')}`);
+console.log(`\nIs removed Paris? ${HashSet().remove('Paris')}`);
+console.log('\n===== BUCKETS AFTER REMOVES HASHSET =====');
+console.log(HashSet().buckets);
+console.log('\n===== LENGTH HASHSET =====');
+console.log(HashSet().length());
+console.log('\n===== KEYS HASHSET =====');
+console.log(HashSet().keys());
+HashSet().clear();
+console.log('\n===== BUCKETS AFTER CLEAR HASHSET =====');
+console.log(HashSet().buckets);
+console.log('\n===== LENGTH =====');
+console.log(HashSet().length());
+

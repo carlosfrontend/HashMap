@@ -71,6 +71,8 @@ const HashMap = () => {
             }
           }
           buckets.length = size * 2;
+        }else{
+          buckets.length = size;
         }
       }
     }
