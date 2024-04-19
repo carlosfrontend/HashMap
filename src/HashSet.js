@@ -10,7 +10,7 @@ buckets.length = size;
 
 const HashSet = () => {
 
-  const { hash, has } = HashMap();
+  const { hash } = HashMap();
 
   const set = (key) => {
     const index = hash(key);
@@ -57,6 +57,26 @@ const HashSet = () => {
           }
         }
       }
+  };
+
+  const has = (key) => {
+    const index = hash(key);
+
+    if (!buckets[index]) {
+      return false;
+    }
+
+    if (buckets[index]) {
+      if (buckets[index].key === key) {
+        return true;
+      }
+    }
+    if (buckets[index].next) {
+      if (buckets[index].next.key === key) {
+        return true;
+      }
+    }
+    return false;
   };
 
   const length = () => {
