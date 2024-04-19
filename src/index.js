@@ -11,6 +11,17 @@ HashMap().set('ela', 'First');
 HashMap().set('ale', 'Second');
 HashMap().set('Carlos', 'Old');
 HashMap().set('Carlos', 'New');
+HashMap().set('Sara', 'Kork');
+HashMap().set('Rita', 'Stan');
+HashMap().set('Clark', 'Woo');
+HashMap().set('Steven', 'Ben');
+HashMap().set('Vanesa', 'Flow');
+HashMap().set('Marcos', 'Santana');
+HashMap().set('Yolanda', 'Morgan');
+HashMap().set('Lucas', 'Stars');
+HashMap().set('Robert', 'Kush');
+
+
 console.log('\n===== BUCKETS =====');
 console.log(HashMap().buckets);
 console.log('\n===== LENGTH =====');
