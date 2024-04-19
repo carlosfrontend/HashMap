@@ -47,7 +47,7 @@ const HashMap = () => {
 
     for (let i = 0; i < buckets.length; i += 1) {
       if (index === i) {
-        const collisionNode = Node(key, value, null);
+        const collisionNode = Node();
         if (key !== buckets[index].key) {
           collisionNode.key = key;
           collisionNode.value = value;
