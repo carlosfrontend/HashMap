@@ -1,5 +1,4 @@
 import LinkedList from './LinkedList.js';
-import Node from './Node.js';
 
 const size = 16;
 let buckets = [];
@@ -27,9 +26,9 @@ const HashMap = () => {
 		return hashCode;
 	};
 
-	const set = (key, value) => {
+	const set = (key) => {
 		const index = hash(key);
-		const node = Node();
+    const node = { key: null, next: null };
 		const linkedList = LinkedList();
 		let empty = 0;
 		const newBuckets = [];
@@ -42,18 +41,16 @@ const HashMap = () => {
 			linkedList.head = node;
 			buckets[index] = linkedList.head;
 			node.key = key;
-			node.value = value;
 		}
 
 		for (let i = 0; i < buckets.length; i += 1) {
 			if (index === i) {
-				const collisionNode = Node();
+				const collisionNode = { key, next: null };
 				if (key !== buckets[index].key) {
 					collisionNode.key = key;
-					collisionNode.value = value;
 					buckets[index].next = collisionNode;
 				} else {
-					buckets[index].value = value;
+					buckets[index].key = key;
 				}
 			}
 		}
@@ -76,21 +73,7 @@ const HashMap = () => {
 		}
 	};
 
-	const get = (key) => {
-		const index = hash(key);
-		if (buckets[hash(key)]) {
-			const linkedList = buckets[index];
-			if (linkedList.key === key) {
-				return linkedList.value;
-			}
-			if (linkedList.next) {
-				if (linkedList.next.key === key) {
-					return linkedList.next.value;
-				}
-			}
-		}
-		return null;
-	};
+	
 
 	const has = (key) => {
 		const index = hash(key);
@@ -124,7 +107,6 @@ const HashMap = () => {
 				if (buckets[i].next) {
 					if (buckets[i].next.key === key) {
 						delete buckets[i].next.key;
-						delete buckets[i].next.value;
 						buckets[i].next = null;
 						return true;
 					}
@@ -135,7 +117,6 @@ const HashMap = () => {
 				if (buckets[i].next) {
 					if (buckets[i].key === key) {
 						delete buckets[i].key;
-						delete buckets[i].value;
 						buckets[i] = buckets[i].next;
 						return true;
 					}
@@ -182,47 +163,15 @@ const HashMap = () => {
 		return arrOfKeys;
 	};
 
-	const values = () => {
-		const arrOfValues = [];
-		for (let i = 0; i < buckets.length; i += 1) {
-			if (buckets[i]) {
-				arrOfValues.push(buckets[i].value);
-			}
-			if (buckets[i] && buckets[i].next) {
-				arrOfValues.push(buckets[i].next.value);
-			}
-		}
-		return arrOfValues;
-	};
-
-	const entries = () => {
-		const arrOfEntries = [];
-		let entry = [];
-		for (let i = 0; i < buckets.length; i += 1) {
-			if (buckets[i]) {
-				entry = [buckets[i].key, buckets[i].value];
-				arrOfEntries.push(entry);
-			}
-			if (buckets[i] && buckets[i].next) {
-				entry = [buckets[i].next.key, buckets[i].next.value];
-				arrOfEntries.push(entry);
-			}
-		}
-		return arrOfEntries;
-	};
-
 	return {
 		buckets,
 		hash,
 		set,
-		get,
 		has,
 		remove,
 		length,
 		clear,
-		keys,
-		values,
-		entries,
+		keys
 	};
 };
 
