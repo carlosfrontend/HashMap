@@ -83,7 +83,7 @@ const HashMap = () => {
       if (linkedList.key === key) {
         return linkedList.value;
       }
-      if (linkedList.next && linkedList.next.key === key) {
+      if (linkedList.next?.key === key) {
         return linkedList.next.value;
       }
     }
@@ -97,11 +97,11 @@ const HashMap = () => {
       return false;
     }
 
-    if (buckets[index] && buckets[index].key === key) {
+    if (buckets[index]?.key === key) {
       return true;
     }
 
-    if (buckets[index].next && buckets[index].next.key === key) {
+    if (buckets[index].next?.key === key) {
       return true;
     }
 
@@ -110,19 +110,19 @@ const HashMap = () => {
 
   const remove = (key) => {
     for (let i = 0; i < buckets.length; i += 1) {
-      if (buckets[i] && buckets[i].key === key && !buckets[i].next) {
+      if (buckets[i]?.key === key && !buckets[i].next) {
         delete buckets[i];
         return true;
       }
 
-      if (buckets[i] && buckets[i].next && buckets[i].next.key === key) {
+      if (buckets[i]?.next?.key === key) {
         delete buckets[i].next.key;
         delete buckets[i].next.value;
         buckets[i].next = null;
         return true;
       }
 
-      if (buckets[i] && buckets[i].next && buckets[i].key === key) {
+      if (buckets[i]?.next && buckets[i].key === key) {
         delete buckets[i].key;
         delete buckets[i].value;
         buckets[i] = buckets[i].next;
@@ -135,11 +135,11 @@ const HashMap = () => {
   const length = () => {
     let count = 0;
     for (let i = 0; i < buckets.length; i += 1) {
-      if (buckets[i] && buckets[i].key) {
+      if (buckets[i]?.key) {
         count += 1;
       }
 
-      if (buckets[i] && buckets[i].next) {
+      if (buckets[i]?.next) {
         count += 1;
       }
     }
@@ -159,7 +159,7 @@ const HashMap = () => {
       if (buckets[i]) {
         arrOfKeys.push(buckets[i].key);
       }
-      if (buckets[i] && buckets[i].next) {
+      if (buckets[i]?.next) {
         arrOfKeys.push(buckets[i].next.key);
       }
     }
@@ -172,7 +172,7 @@ const HashMap = () => {
       if (buckets[i]) {
         arrOfValues.push(buckets[i].value);
       }
-      if (buckets[i] && buckets[i].next) {
+      if (buckets[i]?.next) {
         arrOfValues.push(buckets[i].next.value);
       }
     }
@@ -187,7 +187,7 @@ const HashMap = () => {
         entry = [buckets[i].key, buckets[i].value];
         arrOfEntries.push(entry);
       }
-      if (buckets[i] && buckets[i].next) {
+      if (buckets[i]?.next) {
         entry = [buckets[i].next.key, buckets[i].next.value];
         arrOfEntries.push(entry);
       }
