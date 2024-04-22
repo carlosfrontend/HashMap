@@ -1,6 +1,6 @@
 # HashMap ( The Odin Project )
 ## The Odin Project
-Project that creates a HasmMap with Javascript.
+Project that creates a HashMap with Javascript.
 
 Links:
 
